@@ -1,0 +1,158 @@
+.header {
+    background-color: var(--header-title);
+    padding-top: 24px;
+    padding-bottom: 25px;
+    border-bottom: 1px var(--header-color) solid;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: 80px;
+    z-index: 100;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-link {
+    color: var(--logo-color);
+    font-family: "Raleway";
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.39;
+    letter-spacing: 0.78px;
+}
+
+.header-logo {
+    color: var(--button-color);
+    font-family: "Raleway";
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.39;
+    letter-spacing: 0.78px;
+}
+
+.header-nav {
+    margin-left: 93px;
+}
+/* ===== Навігація ===== */
+.nav-list {
+    display: flex;
+    gap: 50px;
+    position: absolute;
+    top: 9px;
+}
+
+.nav-link {
+    color: var(--title-color);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.28px;
+    transition: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover, 
+.nav-link:focus {
+    color: var(--button-color);
+}
+
+.nav-list > .nav-item:nth-child(n+2) > .nav-link::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--button-color);
+    border-radius: 2px;
+    display: block;
+    margin-top: 31px;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-list > .nav-item:nth-child(n+2) > .nav-link:hover::after,
+.nav-list > .nav-item:nth-child(n+2) > .nav-link:focus::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.active {
+    color: var(--button-color);
+}
+
+.active::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--button-color);
+    border-radius: 2px;
+    display: block;
+    margin-top: 31px;
+    opacity: 1;
+    /* position: absolute;
+    left: 0px; */
+}
+
+.active:hover::after {
+    opacity: 1;
+}
+/* ===== Пошта та телефон ===== */
+.header-list {
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+}
+
+.heading-link {
+    color: var(--paragraph-color);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-item:nth-child(1) > .heading-link:hover, .heading-link:focus {
+    color: var(--button-color);
+    .header-icon {
+        fill: var(--button-color);
+    }
+}
+
+.header-item:nth-child(2) > .heading-link:hover, .heading-link:focus {
+    color: var(--button-color);
+    .header-icon {
+        fill: var(--button-color);
+    }
+}
+
+.header-item:nth-child(1) > .heading-link > .header-icon {
+    width: 16px;
+    height: 12px;
+    fill: var(--paragraph-color);
+    transition: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-item:nth-child(2) > .heading-link > .header-icon {
+    width: 10px;
+    height: 16px;
+    fill: var(--paragraph-color);
+    transition: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
